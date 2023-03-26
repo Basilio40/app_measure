@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.http import JsonResponse
 import requests
+import json
 from requests.auth import HTTPBasicAuth
 import pprint
 
@@ -14,10 +15,10 @@ import pprint
 @login_required
 
 def create(request):
-    api = "https://measure-production.up.railway.app/core/"
+    api = "https://medidor.herokuapp.com/core/"
     
     if request.method == "POST":
-       
+        data = json.loads(request.POST)
         image = request.FILES.get('image')
         DNP = request.POST.get('DNP')
         altura = request.POST.get('altura')
@@ -71,7 +72,7 @@ def create(request):
 
 @login_required
 def documentacao_1(request):
-    api = "https://measure-production.up.railway.app/core/"
+    api = "https://medidor.herokuapp.com/core/"
     requisicao = requests.get(api)
     print(requisicao)
 

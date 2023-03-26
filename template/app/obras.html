@@ -86,4 +86,21 @@
   </div>
   {% include 'app/TheNavigationBar.html' %}
 </div>
+
+<script>
+  fetch('https://appmeasure-production.up.railway.app/obras/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: 'administrador',
+      password: '123456',
+    }),
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+</script>
 {% endblock %}
