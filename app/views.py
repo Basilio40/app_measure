@@ -15,7 +15,7 @@ import pprint
 @login_required
 
 def create(request):
-    api = "https://medidor.herokuapp.com/core/"
+    api = "https://medidor-lentes.herokuapp.com/swagger/"
     
     if request.method == "POST":
         data = json.loads(request.POST)
@@ -72,7 +72,7 @@ def create(request):
 
 @login_required
 def documentacao_1(request):
-    api = "https://medidor.herokuapp.com/core/"
+    api = "https://medidor-lentes.herokuapp.com/swagger/"
     requisicao = requests.get(api)
     print(requisicao)
 
