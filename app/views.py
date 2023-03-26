@@ -15,7 +15,7 @@ import pprint
 @login_required
 
 def create(request):
-    api = "https://medidor-lentes.herokuapp.com/swagger/"
+    api = "https://medidor-lentes.herokuapp.com/swagger/lentes/medicao/"
     
     if request.method == "POST":
         data = json.loads(request.POST)
@@ -72,7 +72,7 @@ def create(request):
 
 @login_required
 def documentacao_1(request):
-    api = "https://medidor-lentes.herokuapp.com/swagger/"
+    api = "https://medidor-lentes.herokuapp.com/swagger/lentes/medicao/"
     requisicao = requests.get(api)
     print(requisicao)
 
